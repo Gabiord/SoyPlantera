@@ -3,6 +3,32 @@
     height: auto;
   }
   
-  .headerNav {
+.headerNav {
     background-color: white;
   }
+
+.carrito{
+  display: flex;
+  flex-direction: column;
+}
+
+.productoCarrito{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding: 10px;
+  img{
+    height: 100px;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+  }
+}
+
+.contenedorCarrito{
+  display: flex;
+  flex-direction: column;
+}

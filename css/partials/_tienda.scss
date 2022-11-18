@@ -1,0 +1,30 @@
+.tiendaProductos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tiendaProducto{
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        img{
+            height: 230px;
+            border-radius: 1%;
+        }
+    }
+}
+
+.botonesCategoria{
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    list-style-type: none;
+}
+
+.botonCategoria{
+    border: none;
+
+
+}
