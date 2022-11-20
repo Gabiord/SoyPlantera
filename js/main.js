@@ -1,10 +1,29 @@
-const contenedorProductos = document.querySelector("#contenedorProductos");
+//CARGAR PRODUCTOS AL DOM
+
+let contenedorProductos = document.querySelector("#contenedorProductos");
 const contenedorCarrito = document.querySelector('#contenedorCarrito');
+const btnCats = document.querySelectorAll("#btnCat")
 
 
-function cargarProductos() {
+btnCats.forEach(btnCat => {
+    btnCat.addEventListener('click', (evt)=>{
+        console.log(btnCat.dataset.title)
+        let productosElegidos = productos.filter(producto => producto.categoria === btnCat.dataset.title)
+        if (btnCat.dataset.title !="Todos"){
+            cargarProductos(productosElegidos);
+        }
+        else{
+        cargarProductos(productos);
+        }
 
-    productos.forEach(producto => {
+    });
+    
+})
+
+function cargarProductos(productosElegidos) {
+
+    contenedorProductos.innerHTML="";
+    productosElegidos.forEach(producto => {
 
         const div=document.createElement("div");
         div.classList.add("tiendaProducto");
@@ -16,11 +35,19 @@ function cargarProductos() {
                         </ul>`;
     
         contenedorProductos.append(div);
-})
+    })
 
 }
 
-cargarProductos();
+cargarProductos(productos);
+
+
+//CARGAR PRODUCTOS AL DOM
+
+
+
+// CARRITO 
+
 
 let carrito=[];
 
@@ -28,13 +55,10 @@ let botonAgregar=document.querySelectorAll("#botonAgregar");
 
 for (let i = 0; i < botonAgregar.length; i+=1) {
     botonAgregar[i].addEventListener('click', agregarProducto);
+   
 }
 
 function agregarProducto(evt){
-    console.log('se agrego un producto al carrito');
-    console.log(evt.currentTarget.dataset.title);
-    console.log(evt.currentTarget.dataset.price);
-
     let title=evt.currentTarget.dataset.title;
     let price=evt.currentTarget.dataset.price;
     let image=evt.currentTarget.dataset.image;
@@ -44,16 +68,19 @@ function agregarProducto(evt){
         precio: price,
         imagen: image
     });
+
     actualizarCarrito();
     console.log(carrito)
 }
 
 
 function actualizarCarrito(){
-    let html="";
+    let renderCarrito="";
+    let contenedorCarrito=document.querySelector('#contenedorCarrito')
+    
     if (carrito.length>0){
         for(producto of carrito){
-            html+=` <div class="productoCarrito">
+            renderCarrito+=` <div class="productoCarrito">
                     <img src="${producto.imagen}" alt="imagen carrito">
                         <div>
                             <p>${producto.titulo}</p>
@@ -63,11 +90,10 @@ function actualizarCarrito(){
                     </div>`
         }}
     else{
-            html=`<p>Tu carrito esta vacio</p>`
+            renderCarrito=`<p>Tu carrito esta vacio</p>`
         }
-
-    let div=document.querySelector('#contenedorCarrito')
-    div.innerHTML=html
+    
+        contenedorCarrito.innerHTML=renderCarrito;    
 }
 
 const btnCarritoCancelar= document.querySelector("#btnCarritoCancelar");
@@ -79,6 +105,16 @@ function borrarCarrito(){
     carrito=[];
     actualizarCarrito();
 }
+
+
+// CARRITO
+
+
+// FILTRADO DE CATEGORIAS
+
+
+
+
 
 
 
