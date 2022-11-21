@@ -3,6 +3,11 @@
 let contenedorProductos = document.querySelector("#contenedorProductos");
 const contenedorCarrito = document.querySelector('#contenedorCarrito');
 const btnCats = document.querySelectorAll("#btnCat")
+let btnAgregar = 0;
+let inputCantidad = [];
+let cantidad =0;
+let carrito = [];
+
 
 
 btnCats.forEach(btnCat => {
@@ -30,44 +35,65 @@ function cargarProductos(productosElegidos) {
         div.innerHTML= `<ul>
                         <li><img src="${producto.imagen}" alt="${producto.nombre}"></li>
                         <li><span>${producto.nombre}</span></li>
-                        <li><span>${producto.precio}</span></li>
-                        <li><button id="botonAgregar"  data-title="${producto.nombre}" data-price="${producto.precio}" data-image="${producto.imagen}">Agregar</button></li>
+                        <li><span>Precio: $ ${producto.precio}</span></li>
+                        <li><button type="submit" id="btnAgregar" data-title="${producto.nombre}" data-price="${producto.precio}" data-image="${producto.imagen}">Agregar al Carrito</button></li>
                         </ul>`;
     
         contenedorProductos.append(div);
     })
+
+    actualizarBtnAgregar();
+
+    actualizarinputsCantidad();
 
 }
 
 cargarProductos(productos);
 
 
-//CARGAR PRODUCTOS AL DOM
 
+//CARGAR PRODUCTOS AL DOM
 
 
 // CARRITO 
 
 
-let carrito=[];
+function actualizarBtnAgregar() {
 
-let botonAgregar=document.querySelectorAll("#botonAgregar");
+    btnAgregar = document.querySelectorAll("#btnAgregar");
+    btnAgregar.forEach(btn => {
+        btn.addEventListener("click", agregarProducto)
+    })
 
-for (let i = 0; i < botonAgregar.length; i+=1) {
-    botonAgregar[i].addEventListener('click', agregarProducto);
-   
+}
+
+function actualizarinputsCantidad(){
+
+    inputCantidad = document.querySelectorAll(".quantity");
+
 }
 
 function agregarProducto(evt){
+
     let title=evt.currentTarget.dataset.title;
     let price=evt.currentTarget.dataset.price;
     let image=evt.currentTarget.dataset.image;
+    let qty = 1;
 
-    carrito.push({
-        titulo: title,
-        precio: price,
-        imagen: image
-    });
+    if(carrito.some(producto => producto.titulo === title)){
+        const index = carrito.findIndex(producto => producto.titulo === title)
+        
+        carrito[index].cantidad+=1;
+
+    }
+    else{
+        carrito.push({
+            titulo: title,
+            precio: price,
+            cantidad: qty,
+            imagen: image
+        });
+    }
 
     actualizarCarrito();
     console.log(carrito)
@@ -84,19 +110,30 @@ function actualizarCarrito(){
                     <img src="${producto.imagen}" alt="imagen carrito">
                         <div>
                             <p>${producto.titulo}</p>
-                            <p>${producto.precio}</p>
+                            <p>$ ${producto.precio}</p>
+                            <p>Cantidad: ${producto.cantidad}
                         </div>
-                    <button id="botonBorrar" data-title="${producto.nombre}" data-price="${producto.precio}" data-image="${producto.imagen}">Borrar</button>
+                    <button class="btnBorrar" id="${producto.titulo}" data-price="${producto.precio}" data-image="${producto.imagen}">Borrar</button>
                     </div>`
-        }}
+        }
+    }
     else{
             renderCarrito=`<p>Tu carrito esta vacio</p>`
         }
     
-        contenedorCarrito.innerHTML=renderCarrito;    
+    contenedorCarrito.innerHTML=renderCarrito;    
+
+    const btnBorrars=document.querySelectorAll(".btnBorrar");  // Para eliminar productos del Carrito
+    btnBorrars.forEach(btnBorrar => {
+        btnBorrar.addEventListener('click', ()=>{
+            const index=carrito.findIndex(producto => producto.titulo === btnBorrar.id)
+            carrito.splice(index,1)
+            actualizarCarrito();
+        })
+    })
 }
 
-const btnCarritoCancelar= document.querySelector("#btnCarritoCancelar");
+const btnCarritoCancelar= document.querySelector("#btnCarritoCancelar"); // Para eliminar todo el carrito.
 
 btnCarritoCancelar.addEventListener("click", borrarCarrito);
 
@@ -106,15 +143,7 @@ function borrarCarrito(){
     actualizarCarrito();
 }
 
-
 // CARRITO
-
-
-// FILTRADO DE CATEGORIAS
-
-
-
-
 
 
 
