@@ -6,7 +6,8 @@ const btnCats = document.querySelectorAll("#btnCat")
 let btnAgregar = 0;
 let inputCantidad = [];
 let cantidad =0;
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("productosCarrito"));
+
 
 
 
@@ -48,7 +49,6 @@ function cargarProductos(productosElegidos) {
 
 }
 
-cargarProductos(productos);
 
 
 
@@ -64,12 +64,6 @@ function actualizarBtnAgregar() {
     btnAgregar.forEach(btn => {
         btn.addEventListener("click", agregarProducto)
     })
-
-}
-
-function actualizarinputsCantidad(){
-
-    inputCantidad = document.querySelectorAll(".quantity");
 
 }
 
@@ -97,7 +91,13 @@ function agregarProducto(evt){
 
     actualizarCarrito();
     console.log(carrito)
+
 }
+
+
+actualizarCarrito(carrito);
+
+cargarProductos(productos);
 
 
 function actualizarCarrito(){
@@ -131,6 +131,8 @@ function actualizarCarrito(){
             actualizarCarrito();
         })
     })
+
+    localStorage.setItem("productosCarrito", JSON.stringify(carrito))
 }
 
 const btnCarritoCancelar= document.querySelector("#btnCarritoCancelar"); // Para eliminar todo el carrito.
