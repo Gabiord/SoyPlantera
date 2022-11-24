@@ -1,0 +1,36 @@
+/* MAIN DE CONTACTO */
+    
+.formContacto{
+    form{
+    @extend %flexColumn;
+    align-items: center;
+    flex-wrap: nowrap;
+    }
+}
+
+.datos{
+    @extend %flexColumn;
+    align-content: space-between;
+    width: 90%;
+    input, textarea{
+        margin: 15px;
+        padding: 10px;
+        background-color: map-get($colors, colorformulario);
+        border: none;
+    }
+}
+
+::placeholder{
+    font-family: $fuentesecundaria;
+    color: map-get($colors, colorprincipal);
+    font-size: 18px;   
+}
+
+@media screen and (max-width: 768px) {
+    ::placeholder{
+        font-family: $fuentesecundaria;
+        color: map-get($colors, colorprincipal);
+        font-size: 15px;  
+    }
+}
+/* MAIN DE CONTACTO */

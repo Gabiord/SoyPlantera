@@ -1,30 +1,44 @@
-.tiendaProductos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+
+/* MAIN DE TIENDA */
 
 .tiendaProducto{
     ul{
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        img{
-            height: 230px;
-            border-radius: 1%;
+        li{
+            list-style-type: none;
+            overflow: hidden;
+            font-family: $fuenteprincipal;
+            font-size: 22px;
+            text-decoration: none;
+            color: map-get($colors, colorprincipal);
+            text-align: left;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    transition: all 0.5s;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                    &:active{
+                        opacity: 0.5;
+                    }
+                } 
+            }
+        }  
+    }  
+    
+.description{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .tiendaProducto{
+        ul{
+            li{
+                margin-left: -10px;
+            }
         }
     }
 }
 
-.botonesCategoria{
-    display: flex;
-    flex-direction: column;
-    align-items: space-evenly;
-    list-style-type: none;
-}
-
-.botonCategoria{
-    border: none;
-
-
-}
+/* MAIN DE TIENDA */

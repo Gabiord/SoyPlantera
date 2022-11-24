@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Soy Plantera</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Soy Plantera - Tienda</title>
 </head>
 <body class="container-fluid">
     <header class="row">
@@ -22,7 +23,7 @@
                         </svg>
                     </button>
                 </div>      
-                <a class="navbar-brand" href="./index.html"><img class="logo-Navbar" src="./images/WatercolorLogo.png" alt="logo de Soy Plantera"></a>
+                <a class="navbar-brand" href="../index.html"><img class="logo-Navbar" src="../images/WatercolorLogo.png" alt="logo de Soy Plantera"></a>
                 <div class="navegacion-der">
                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
@@ -41,8 +42,8 @@
                 <div class="offcanvas-body">
                     <aside class="col-12"> 
                         <ul class="headerNav">
-                            <li><a href="./pages/tienda.html">Ir a la Tienda</a></li>
-                            <li><a href="./pages/contacto.html">Formulario de Contacto</a></li>
+                            <li><a href="../index.html">Volver a Inicio</a></li>
+                            <li><a href="./tienda.html">Ir a la Tienda</a></li>
                             <li><a href="#">Preguntas Frecuentes</a></li>
                             <li><a href="#">Terminos del Servicio</a></li>
                         </ul>
@@ -52,56 +53,44 @@
         </nav>    
 
 <!-- // Derecha - Carrito de Compras // -->
-        <div class="offcanvas offcanvas-end" tabindex="2" id="offcanvasCarrito" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title">Carrito de Compras</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
-            </div>    
-            <div class="offcanvas-body" id="offcanvasCarrito">
-                    <div class="contenedorCarrito" id="contenedorCarrito">
-                    </div>
-                    <p class="parrafos fs-5" id="precioTotal"></p>
-                    <button class="botonesCarrito" >Procesar pedido</button>
-                    <button class="botonesCarrito" id="btnCarritoCancelar">Cancelar Carrito</button>
-            </div>    
-        </div>
+<div class="offcanvas offcanvas-end" tabindex="2" id="offcanvasCarrito" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Carrito de Compras</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
+    </div>    
+    <div class="offcanvas-body" id="offcanvasCarrito">
+            <div class="contenedorCarrito" id="contenedorCarrito">
+            </div>
+            <p class="parrafos fs-5" id="precioTotal"></p>
+            <button class="botonesCarrito">Procesar pedido</button>
+            <button class="botonesCarrito" id="btnCarritoCancelar">Cancelar Carrito</button>
+    </div>    
+</div>
 
     </header>
-
-    <main class="row">
-        <main class="container-fluid">
-            <aside class="indexMain1 row">
-                <div class="col-12">
-                    <h1>Bienvenidos a Soy Plantera</h1>
-                    <a class="botonMain" href="./pages/tienda.html">Ir a la Tienda</a>
-                </div>
-            </aside>
-            <aside class="indexMain2 row">
-                <div class="col-12">
-                    <label class="titulos fs-2">Que Hacemos?</label>
-                    <p class="parrafos fs-5">En Soy Plantera diseñamos y hacemos macetas de ceramica artesanales</p>
-                </div>
-            </aside>
-            <aside class="row">
-                <div class="col-md-4 col-sm-12 indexMain3">
-                    <img class="indexEmojis" src="./images/emojis/plant.png" alt="planta con carita feliz"/>
-                    <h2 class="titulos">Inspiracion</h2>
-                    <p class="parrafos">El dise las macetas comienza a partir de las plantas mismas, tomando como inspiración su personalidad, necesidades, forma, tamaño y color.</p>
-                </div>
-                <div class="col-md-4 col-sm-12 indexMain3">
-                    <img class="indexEmojis" src="./images/emojis/hand.png" alt="mano con carita feliz"/>
-                    <h2 class="titulos">Hecho a mano</h2>
-                    <p class="parrafos">Todos los hogares para plantas de Soy Plantera son construidos artesanalmente en cerámica de alta temperatura, pasan por un proceso de fundición arriba de los 1,250 ºC, lo que brinda un acabado de mayor resistencia y durabilidad.</p>
-                </div>
-                <div class="col-md-4 col-sm-12 indexMain3">
-                    <img class="indexEmojis" src="./images/emojis/cactus.png" alt="cactus con carita feliz"/>
-                    <h2 class="titulos">Principal Labor</h2>
-                    <p class="parrafos">Fomentar el cuidado de las plantas, sensibilizando a la gente sobre los beneficios tangibles que pueden obtener al tener plantas en espacios interiores.</p>
-                </div>    
-            </aside>
-        </main>    
-    </main>
-
+    <main class="container-fluid">
+        <section class="row">   
+            <div class="formContacto col-12">
+                <h1 class="titulos">Formulario de Contacto</h1>
+                <form>
+                    <div class="datos">
+                        <input type="text" id="datosNombreyApellido" placeholder="Nombre y Apellido">
+                        <input type="tel" id="datosTelefono" placeholder="Telefono">
+                        <input type="email" id="datosEmail" placeholder="Email">
+                        <textarea id="datosMensaje" placeholder="Dejanos un mensaje"></textarea>
+                    </div>
+                    <div class="checkbox">   
+                        <label for="terminos">Deseas recibir notificaciones?</label>
+                        <input id="datosNotificaciones" type="checkbox" checked>
+                    </div>
+                    <div>
+                        <input class="botonesContacto" type="submit" id="submitFormulario" value="Enviar">
+                        <input class="botonesContacto" type="button" value="Cancelar">
+                    </div>
+                </form> 
+            </div>
+        </section>
+    </main>    
     <footer class="row footer">
         <div class="col-lg-6 col-sm-12">
             <h5>Datos de Contacto</h5>
@@ -116,23 +105,25 @@
         <div class="col-lg-6 col-sm-12">
             <h5>Redes Sociales</h5>   
             <ul class="footerNav flexRow">
-                <li class="footerIcons"><a href="#"><img src="./images/icons/whatsapp.png" alt=""></a></li>
-                <li class="footerIcons"><a href="#"><img src="./images/icons/instagram.png" alt=""></a></li>
-                <li class="footerIcons"><a href="#"><img src="./images/icons/facebook.png" alt=""></a></li>
-                <li class="footerIcons"><a href="#"><img src="./images/icons/tik-tok.png" alt=""></a></li>
+                <li class="footerIcons"><a href="#"><img src="../images/icons/whatsapp.png" alt=""></a></li>
+                <li class="footerIcons"><a href="#"><img src="../images/icons/instagram.png" alt=""></a></li>
+                <li class="footerIcons"><a href="#"><img src="../images/icons/facebook.png" alt=""></a></li>
+                <li class="footerIcons"><a href="#"><img src="../images/icons/tik-tok.png" alt=""></a></li>
             </ul>
             <h5>Ayuda e informacion</h5>
             <ul class="footerNav">
                 <li><a href="#">Preguntas Frecuentes</a></li>
                 <li><a href="#">Terminos del Servicio</a></li>
-                <li><img src="./images/icons/cards-icons.png" alt="Medios de Pago Tarjetas"></li>
+                <li><img src="../images/icons/cards-icons.png" alt="Medios de Pago Tarjetas"></li>
         </div>
         <div class="col-12 footerCopyright">
             <p class="flexRow"> © 2022, Soy Plantera. Desarrollado por Gabiord</p>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>  
-    <script src="./js/db.js"></script>
-    <script src="./js/main.js"></script>  
+    <script src="../js/formulario.js"></script>  
+    <script src="../js/db.js"></script>
+    <script src="../js/main.js"></script>  
 </body>
 </html>

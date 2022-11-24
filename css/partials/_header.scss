@@ -16,6 +16,7 @@
  display: flex;
  flex-direction: row;
  justify-content: space-between;
+ align-items: center;
  padding: 10px;
   img{
     height: 100px;
@@ -23,12 +24,49 @@
   div{
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    p, span{
+      margin: -3px
+      
+    }
 
   }
+}
+
+.cantidadModificada{
+  width: 40px;
+  margin-left: 20px;
 }
 
 .contenedorCarrito{
   display: flex;
   flex-direction: column;
 }
+
+.headerNav{
+  list-style-type: none;
+  font-family: $fuenteprincipal;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  li{
+      a{
+        color: #000000;
+        text-decoration: none;
+      }
+      a:hover{
+        color: rgb(113, 5, 112);
+      }
+      button{
+      width: 300%;
+      border: none;
+      align-items: flex-start;
+      background-color: #ffffff;
+      }
+      button:hover{
+        color: rgb(195, 0, 255);
+      }
+  } 
+}    
+

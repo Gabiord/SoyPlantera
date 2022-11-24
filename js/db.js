@@ -16,7 +16,7 @@ const productos = [
     },
     
     {
-    nombre: "Maceta Redonda con Pintas",
+    nombre: "Maceta Redonda",
     informacion: "chica",
     precio: 500,
     imagen: "https://i.pinimg.com/originals/f5/9a/2e/f59a2ea1e13849a5205b5cd4c6cf6064.jpg",
@@ -80,7 +80,7 @@ const productos = [
     },          
     
     {
-    nombre: "Floreros rusticos, tipo cemento",
+    nombre: "Floreros rusticos",
     informacion: "3 Piezas",
     precio: 1890,
     imagen: "https://i.pinimg.com/originals/12/d7/ce/12d7ce32d6d8f51d0a78d598cf16699e.jpg",

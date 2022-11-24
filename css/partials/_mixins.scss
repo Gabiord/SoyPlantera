@@ -1,0 +1,28 @@
+
+// MIXINS
+@mixin button($height, $width, $fontSize, $marginBotton: false)
+{
+    border: none;
+    height: $height;
+    width: $width;
+    background-color: map-get($colors, colorsecundario);
+    border-radius: 50px;
+    color: map-get($colors, colorprincipal);
+    text-align: center;
+    font-family: $fuenteprincipal;
+    font-size: $fontSize;
+    text-decoration: none;
+    @if $marginBotton{
+        margin-bottom: 150px;
+    }
+    @else{
+        margin-bottom: 0px;
+    }
+    
+    transition: all 0.8s ease;
+    &:hover{
+        background-color: map-get($colors, colorprincipal);
+        color: map-get($colors, colorsecundario);    
+    }
+    
+}
