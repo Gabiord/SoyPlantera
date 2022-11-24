@@ -6,7 +6,7 @@ const btnCats = document.querySelectorAll("#btnCat")
 let btnAgregar = 0;
 let inputCantidad = [];
 let cantidad =0;
-let carrito = JSON.parse(localStorage.getItem("productosCarrito"));
+let carrito = [JSON.parse(localStorage.getItem("productosCarrito"))];
 let precioTotal = document.querySelector("#precioTotal")
 
 
