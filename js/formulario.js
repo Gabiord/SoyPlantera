@@ -1,6 +1,6 @@
 // FORMULARIO DE CONTACTO
 
-datosContactos=[];
+datosClientes=[];
 
 const datosNombreyApellido=document.querySelector("#datosNombreyApellido");
 const datosTelefono=document.querySelector("#datosTelefono");
@@ -17,14 +17,14 @@ function guardarDatosContacto(evt){
     evt.preventDefault()
     // const nombreApellido = datosNombreyApellido.value
     
-    datosContactos.push(
+    datosClientes.push(
         {
             nombreApellido: datosNombreyApellido.value,
             telefono: datosTelefono.value,
             email:datosEmail.value,
-            preguntaNotificacion:datosNotificaciones.value
+            preguntaNotificacion:datosNotificaciones.checked
         }
     )
-    console.log(datosContactos);
+    console.log(datosClientes);
 
 }

@@ -6,8 +6,16 @@ const btnCats = document.querySelectorAll("#btnCat")
 let btnAgregar = 0;
 let inputCantidad = [];
 let cantidad =0;
-let carrito = [JSON.parse(localStorage.getItem("productosCarrito"))];
 let precioTotal = document.querySelector("#precioTotal")
+
+let carrito = [];
+
+if(localStorage.length>0){
+    carrito = JSON.parse(localStorage.getItem("productosCarrito"));
+}
+else{
+    localStorage.setItem("productosCarrito", JSON.stringify(carrito));
+}
 
 
 btnCats.forEach(btnCat => {
@@ -47,8 +55,6 @@ function cargarProductos(productosElegidos) {
 
     actualizarBtnAgregar();
 }
-
-
 
 
 
@@ -152,7 +158,6 @@ function actualizarCarrito(){
     }))
 
     localStorage.setItem("productosCarrito", JSON.stringify(carrito))
-
 }
 
 
@@ -162,13 +167,6 @@ function borrarCarrito(){
     carrito=[];
     actualizarCarrito();
 }
-
-
-
-
-
-
-
 
 
 
