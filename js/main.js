@@ -2,12 +2,13 @@
 
 let contenedorProductos = document.querySelector("#contenedorProductos");
 const contenedorCarrito = document.querySelector('#contenedorCarrito');
-const btnCats = document.querySelectorAll("#btnCat")
+const btnCats = document.querySelectorAll("#btnCat");
 let btnAgregar = 0;
 let inputCantidad = [];
 let cantidad =0;
-let precioTotal = document.querySelector("#precioTotal")
+let precioTotal = document.querySelector("#precioTotal");
 let carrito = [];
+
 
 // VERIFICANCO EL LOCAL STORAGE 
 
@@ -164,3 +165,5 @@ function borrarCarrito(){
 actualizarCarrito(carrito);
 
 filtradoProductos();
+
+new WOW().init();

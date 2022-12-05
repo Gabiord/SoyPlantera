@@ -374,4 +374,23 @@ body {
     font-size: 15px;
   }
 }
-/* MAIN DE CONTACTO *//*# sourceMappingURL=styles.css.map */
+/* MAIN DE CONTACTO */
+.datosCarrito {
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productoCarritoPag {
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+.productoCarritoPag img {
+  height: 150px;
+}/*# sourceMappingURL=styles.css.map */

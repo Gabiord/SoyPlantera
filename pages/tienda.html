@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>Soy Plantera - Formulario</title>
+    <title>Soy Plantera - Tienda</title>
 </head>
 <body class="container-fluid">
     <header class="row">
@@ -43,18 +43,9 @@
                     <aside class="col-12"> 
                         <ul class="headerNav">
                             <li><a href="../index.html">Volver a Inicio</a></li>
-                            <li><a href="./contacto.html">Formulario de Contacto</a></li>
+                            <li><a href="./tienda.html">Ir a la Tienda</a></li>
                             <li><a href="#">Preguntas Frecuentes</a></li>
                             <li><a href="#">Terminos del Servicio</a></li>
-                        </ul>
-                    </aside>
-                    <aside class="col-3">
-                        <ul class="headerNav">
-                            <li>Filtro:</li>
-                            <li><button id= "btnCat"  data-title="Todos">Todos los productos</button></li>
-                            <li><button  id= "btnCat" data-title="Macetas">Macetas</button></li>
-                            <li><button  id= "btnCat" data-title="Vajillas">Vajilla</button></li>
-                            <li><button  id= "btnCat" data-title="Floreros">Floreros</button></li>
                         </ul>
                     </aside>
                 </div>
@@ -62,22 +53,19 @@
         </nav>    
 
 <!-- // Derecha - Carrito de Compras // -->
-        <div class="offcanvas offcanvas-end" tabindex="2" id="offcanvasCarrito" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title">Carrito de Compras</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
-            </div>    
-            <div class="offcanvas-body" id="offcanvasCarrito">
-                    <div class="contenedorCarrito" id="contenedorCarrito">
-                        <!-- SE RELLENA CON JS -->
-                    </div>
-                    <p class="parrafos fs-5" id="precioTotal">
-                        <!-- SE RELLENA CON JS -->
-                    </p>
-                    <button class="botonesCarrito">Procesar pedido</button>
-                    <button class="botonesCarrito" id="btnCarritoCancelar">Cancelar Carrito</button>
-            </div>    
-        </div>
+<div class="offcanvas offcanvas-end" tabindex="2" id="offcanvasCarrito" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Carrito de Compras</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" name="button"></button>
+    </div>    
+    <div class="offcanvas-body" id="offcanvasCarrito">
+            <div class="contenedorCarrito" id="contenedorCarrito">
+            </div>
+            <p class="parrafos fs-5" id="precioTotal"></p>
+            <button class="botonesCarrito" onclick="window.location.href ='./carrito.html';">Procesar pedido</button>
+            <button class="botonesCarrito" id="btnCarritoCancelar">Cancelar Carrito</button>
+    </div>    
+</div>
 
     </header>
 
