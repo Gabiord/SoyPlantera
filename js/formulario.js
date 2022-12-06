@@ -10,7 +10,7 @@ const datosNotificaciones=document.querySelector("#datosNotificaciones");
 const submitFormulario=document.querySelector("#submitFormulario");
 
 
-submitFormulario.addEventListener("click",guardarDatosContacto)
+submitFormulario.addEventListener("click" , guardarDatosContacto)
 
 function guardarDatosContacto(evt){
 

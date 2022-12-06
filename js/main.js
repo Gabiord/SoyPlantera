@@ -48,7 +48,7 @@ async function cargarProductos(productosElegidos) {
                         <li><img src="${producto.imagen}" alt="${producto.nombre}"></li>
                         <li><span>${producto.nombre}</span></li>
                         <li><span>Precio: $ ${producto.precio}</span></li>
-                        <li><button class="botonesProductos" type="submit" id="btnAgregar" data-title="${producto.nombre}" data-price="${producto.precio}" data-image="${producto.imagen}">Agregar al Carrito</button></li>
+                        <li><button class="botonesProductos" type="submit" id="btnAgregar" data-title="${producto.nombre}" data-price="${producto.precio}" data-image="${producto.imagen}" data-info="${producto.informacion}">Agregar al Carrito</button></li>
                     </ul>`;
         contenedorProductos.append(div);
     })
@@ -71,6 +71,7 @@ function agregarProducto(evt){
     let price=Number(evt.currentTarget.dataset.price);
     let image=evt.currentTarget.dataset.image;
     let qty = Number(1);
+    let informacion=evt.currentTarget.dataset.info;
 
     if(carrito.some(producto => producto.titulo === title)){
         const index = carrito.findIndex(producto => producto.titulo === title)
@@ -83,6 +84,7 @@ function agregarProducto(evt){
             titulo: title,
             precio: Number(price),
             cantidad: Number(qty),
+            descripcion:informacion,
             imagen: image,
             total:price*qty
         });
@@ -149,6 +151,8 @@ function actualizarCarrito(){
     }))
 
     localStorage.setItem("productosCarrito", JSON.stringify(carrito))
+
+    
 }
 
 const btnCarritoCancelar= document.querySelector("#btnCarritoCancelar"); // Para eliminar todo el carrito.
@@ -165,5 +169,3 @@ function borrarCarrito(){
 actualizarCarrito(carrito);
 
 filtradoProductos();
-
-new WOW().init();
