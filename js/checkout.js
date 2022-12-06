@@ -68,10 +68,8 @@ procesarPedido.addEventListener("click",cargarpedido);
 
 function cargarpedido(evt){
 
-    if(carrito.lenght>0){
-
+    if (carrito.length>0){
         evt.preventDefault();
-
         nuevaVenta.push(
             {
             carrito,
