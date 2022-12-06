@@ -25,6 +25,4 @@ function guardarDatosContacto(evt){
             preguntaNotificacion:datosNotificaciones.checked
         }
     )
-    console.log(datosClientes);
-
 }

@@ -27,7 +27,6 @@ async function filtradoProductos(){
     cargarProductos(productos);
     btnCats.forEach(btnCat => {
         btnCat.addEventListener('click', (evt)=>{
-            console.log(btnCat.dataset.title)
             let productosElegidos = productos.filter(producto => producto.categoria === btnCat.dataset.title)
             cargarProductos(btnCat.dataset.title !="Todos" ? productosElegidos : productos);
         });
@@ -92,7 +91,6 @@ function agregarProducto(evt){
 
     actualizarCarrito();
     
-    console.log(carrito)
     Toastify({
         text: `${producto.titulo} se ha agregado al carrito`,
         className: "info",
@@ -146,7 +144,6 @@ function actualizarCarrito(){
         const index=carrito.findIndex(producto => producto.titulo === valor.id)
         carrito[index].cantidad = valor.value;
         carrito[index].total = carrito[index].precio*carrito[index].cantidad;
-        console.log(carrito)
         actualizarCarrito();
     }))
 

@@ -79,10 +79,9 @@ function cargarpedido(evt){
             direccion2Cliente:direccion2Cliente.value,
             paisCliente:paisCliente.value,
             departamentoCliente:departamentoCliente.value,
-            ZipCodeCliente:ZipCodeCliente.value,
+            ZipCodeCliente:zipCodeCliente.value,
             }
         )
-        console.log(nuevaVenta);
 
         formularioCliente.reset();
         borrarCarrito();
